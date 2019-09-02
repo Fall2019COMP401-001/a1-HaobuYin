@@ -21,14 +21,14 @@ public class A1Novice {
 		
 		// Read input from customers
 		for (int i=0; i<count; i++) {
-		firstNames[i]=scan.next();
-		lastNames[i] =scan.next();
-		itemsKinds[i] =scan.nextInt();
-		   for (int j=0; j<itemsKinds[i];j++) {
-		   itemNums[j] = scan.nextInt();
-		   itemNames[j] = scan.next();
-           itemPrices[j] = scan.nextDouble();
-           totalPrice[i] = totalPrice[i] + itemNums[j] * itemPrices[j];
+		    firstNames[i]=scan.next();
+		    lastNames[i] =scan.next();
+		    itemsKinds[i] =scan.nextInt();
+		    for (int j=0; j<itemsKinds[i];j++) {
+		        itemNums[j] = scan.nextInt();
+		        itemNames[j] = scan.next();
+                itemPrices[j] = scan.nextDouble();
+                totalPrice[i] = totalPrice[i] + itemNums[j] * itemPrices[j];
 		   }
 		}
 		scan.close();
@@ -38,19 +38,6 @@ public class A1Novice {
 		}
 	}
 		
-		/* calculatePrice
-		 * input: number of items, number of each item, price of each item
-		 * output: total price
-		 * precondition: input can't be null
-		 */
-		
-		static double calculatePrice (int a, int b, double c){
-			double sum = 0;
-			for (int i=0;i<a;i++) {
-				sum = sum + b * c;
-			}
-			return sum;
-		}
 		/* nameEditor
 		 * input first name and last name
 		 * output: a string
