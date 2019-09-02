@@ -25,6 +25,7 @@ public class A1Jedi {
 		int[] itemsKinds = new int[count2];
 		int[] itemstat = new int[count];
 		int[] itemPopu = new int[count];
+		boolean[] boughtCheck = new boolean[count];
 		double[] totalPrice = new double[count2];
 		for (int i = 0; i < count2; i++) {
 			nameOfCus[i] = scan.next() + " " + scan.next();
@@ -32,17 +33,24 @@ public class A1Jedi {
 			for (int j = 0; j < itemsKinds[i]; j++) {
 				int temp = scan.nextInt();
 				String target = scan.next();
-			    itemPopu[findItem(target, nameOfItems)]++;
+			    boughtCheck[findItem(target, nameOfItems)] = true;
 				itemstat[findItem(target, nameOfItems)] = itemstat[findItem(target, nameOfItems)] + temp;
 				totalPrice[i] = totalPrice[i] + temp * findPrice(target, nameOfItems, priceOfItems);
 			}
+			for (int j=0; j<count;j++ ) {
+				if(boughtCheck[j]) {
+					itemPopu[j]++;
+					boughtCheck[j]=false;
+				}
+			}
+			
 		}
 		scan.close();
 		// Create statistic for each item;
 
 		for (int i = 0; i < count; i++) {
 			if (itemstat[i] != 0) {
-				System.out.println(itemPopu[i]+" custormers bought " + itemstat[i] + " " + nameOfItems[i]);
+				System.out.println(itemPopu[i]+" customers bought " + itemstat[i] + " " + nameOfItems[i]);
 			} else {
 				System.out.println("No customers bought " + nameOfItems[i]);
 			}
