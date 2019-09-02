@@ -34,9 +34,9 @@ public class A1Adept {
 
 		scan.close();
 		
-		System.out.println("Biggest:"+findCustomer(big(totalPrice), totalPrice, nameOfCus)+" " + String.format("%.2f", big(totalPrice)));
-		System.out.println("Smallest:"+findCustomer(small(totalPrice), totalPrice, nameOfCus)+" " + String.format("%.2f", small(totalPrice)));
-		System.out.println("Average:"+ " " + String.format("%.2f", average(totalPrice)));
+		System.out.println("Biggest: "+findCustomer(big(totalPrice), totalPrice, nameOfCus)+" (" + String.format("%.2f", big(totalPrice))+")");
+		System.out.println("Smallest: "+findCustomer(small(totalPrice), totalPrice, nameOfCus)+" (" + String.format("%.2f", small(totalPrice))+")");
+		System.out.println("Average: " + String.format("%.2f", average(totalPrice)));
 	}
 		/* findPrice
 		 * input: name of item in store
